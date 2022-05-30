@@ -5,7 +5,7 @@ import Calender from "./calendar";
 import "../styles/datepicker.scss";
 import { useOnClickOutside } from "../utils/hook";
 
-function DatePciker() {
+function DatePciker(props) {
   const [isOpen, setOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
@@ -14,16 +14,6 @@ function DatePciker() {
 
   function handleFocus() {
     setOpen(true);
-  }
-
-  function handleInputChange(event) {
-    // const inputValue = event.target.value;
-    // debugger
-    // const momentValue = moment(inputValue, inputFormat);
-    // if (momentValue.isValid()) {
-    //   this.setState({ momentValue });
-    // }
-    // this.setState({ inputValue });
   }
 
   function handleSelectValue(value) {
@@ -36,13 +26,12 @@ function DatePciker() {
       <input
         type="text"
         onFocus={handleFocus.bind(this)}
-        onChange={handleInputChange.bind(this)}
         value={inputValue}
       />
     );
   };
   return (
-    <div  ref={ref} className="datepicker-container">
+    <div ref={ref} className="datepicker-container">
       {renderInput()}
       {isOpen && (
         <Calender
