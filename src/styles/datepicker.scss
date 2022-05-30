@@ -1,0 +1,9 @@
+.datepicker-container{
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    margin: 30px;
+    .calendar-container{
+        position: absolute;
+    }
+}
